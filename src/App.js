@@ -4,7 +4,7 @@ import SkillForm from './SkillForm';
 import SkillList from './SkillList';
 
 function App() {
-  const [skills, setSkills] = useState(['React']);
+  const [skills, setSkills] = useState([]);
   const [sortOrder, setSortOrder] = useState('asc');
 
   const addSkill = (skill) => {
@@ -34,10 +34,11 @@ function App() {
       <button className="btn btn-primary mb-3" onClick={toggleSortOrder}>
         Sort ({sortOrder === 'asc' ? 'Descending' : 'Ascending'})
       </button>
-      <SkillForm addSkill={addSkill} />
       <SkillList skills={skills} removeSkill={removeSkill} />
+      <SkillForm addSkill={addSkill} />
     </div>
   );
 }
 
 export default App;
+
